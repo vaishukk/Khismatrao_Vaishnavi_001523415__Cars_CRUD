@@ -59,8 +59,6 @@ public class CreatePanel extends javax.swing.JPanel {
         labelseats = new javax.swing.JLabel();
         labelvehicleplate = new javax.swing.JLabel();
         labelcarcolor = new javax.swing.JLabel();
-        labelavailability = new javax.swing.JLabel();
-        labelmaintenance = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         checkBox_Availability_no = new javax.swing.JCheckBox();
@@ -208,14 +206,6 @@ public class CreatePanel extends javax.swing.JPanel {
         labelcarcolor.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         labelcarcolor.setForeground(new java.awt.Color(255, 255, 0));
         add(labelcarcolor, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 400, -1, 30));
-
-        labelavailability.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        labelavailability.setForeground(new java.awt.Color(255, 255, 0));
-        add(labelavailability, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 440, -1, -1));
-
-        labelmaintenance.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        labelmaintenance.setForeground(new java.awt.Color(255, 255, 0));
-        add(labelmaintenance, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 480, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 51));
 
@@ -469,9 +459,7 @@ private void savemethod(){
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel labelavailability;
     private javax.swing.JLabel labelcarcolor;
-    private javax.swing.JLabel labelmaintenance;
     private javax.swing.JLabel labelmanufacturer;
     private javax.swing.JLabel labelmanuyear;
     private javax.swing.JLabel labelname;
