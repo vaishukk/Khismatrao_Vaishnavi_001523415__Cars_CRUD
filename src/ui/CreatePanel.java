@@ -158,8 +158,8 @@ public class CreatePanel extends javax.swing.JPanel {
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Maintenance Expired:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 510, -1, -1));
+        jLabel8.setText("Maintenance :");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 510, -1, -1));
 
         saveButton.setBackground(new java.awt.Color(204, 204, 255));
         saveButton.setText("Save");
@@ -218,7 +218,7 @@ public class CreatePanel extends javax.swing.JPanel {
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1320, 100));
 
         checkBox_Availability_no.setForeground(new java.awt.Color(255, 255, 255));
-        checkBox_Availability_no.setText("unavailable");
+        checkBox_Availability_no.setText("inaccessible");
         checkBox_Availability_no.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkBox_Availability_noActionPerformed(evt);
@@ -236,7 +236,7 @@ public class CreatePanel extends javax.swing.JPanel {
         add(radioButton_Expired, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 510, -1, -1));
 
         radioButton_NotExpired.setForeground(new java.awt.Color(255, 255, 255));
-        radioButton_NotExpired.setText("notexpired");
+        radioButton_NotExpired.setText("exists");
         radioButton_NotExpired.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radioButton_NotExpiredActionPerformed(evt);

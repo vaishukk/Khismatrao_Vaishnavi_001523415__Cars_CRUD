@@ -174,8 +174,8 @@ public class ViewPanel extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Maintenance Expired:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, -1, -1));
+        jLabel8.setText("Maintenance:");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, -1, -1));
 
         txt_expiration.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_expiration.setHorizontalAlignment(javax.swing.JTextField.CENTER);
