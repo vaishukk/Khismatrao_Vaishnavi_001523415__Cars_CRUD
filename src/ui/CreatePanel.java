@@ -363,9 +363,9 @@ public class CreatePanel extends javax.swing.JPanel {
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         // TODO add your handling code here:
+         String vehicleLicensePlate = txt_platenumber.getText();
          
-         
-         if(checkBox_Availability_yes.isSelected()){
+        if(checkBox_Availability_yes.isSelected()){
              availibility = checkBox_Availability_yes.getText();
          }
          else if(checkBox_Availability_no.isSelected()){
@@ -378,11 +378,25 @@ public class CreatePanel extends javax.swing.JPanel {
              
              maintenanceExpiration = radioButton_NotExpired.getText();
          }
+         for(Cars c : history.getHistory()){
+              if(c.getVehicleLicensePlate().contains(vehicleLicensePlate)){
+                  JOptionPane.showMessageDialog(this,"Vehicle License Plate already exists. Please enter another vehicle license plate");
+                  return;
+              }
+              else
+                  break;
+         }  
         savemethod();
+              
+          
+          
+            
+          
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void checkBox_Availability_noActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_Availability_noActionPerformed
         // TODO add your handling code here:
+        
          if(checkBox_Availability_no.isSelected()){
         checkBox_Availability_yes.setSelected(false);
         }
@@ -410,6 +424,8 @@ public class CreatePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_comboBox_LocationActionPerformed
 
 private void savemethod(){
+    
+    
 
          String carModelName = txt_modelname.getText();
          String manufacturer = txt_manufacturer.getText();
@@ -418,6 +434,7 @@ private void savemethod(){
          String vehicleLicensePlate = txt_platenumber.getText();
          String colour = txt_colour.getText();
          String selectedValue = comboBox_Location.getSelectedItem().toString();
+         
          
          Cars c = history.addNewCar();
          
