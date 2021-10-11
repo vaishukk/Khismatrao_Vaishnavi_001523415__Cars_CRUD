@@ -559,7 +559,7 @@ public class ViewPanel extends javax.swing.JPanel {
         Pattern patt=Pattern.compile(PATTERN);
         Matcher match =patt.matcher(txt_manufacturer.getText());
         if(!match.matches()){ //if pattern does't match display below message and disable save button 
-            labelmanufacturer.setText("Something went wrong!!");
+            labelmanufacturer.setText("Error!!");
             updateButton.setEnabled(false);
         }
         else{ //if pattern matches do not display any message and enable the save button
@@ -574,7 +574,7 @@ public class ViewPanel extends javax.swing.JPanel {
         Pattern patt=Pattern.compile(PATTERN);
         Matcher match =patt.matcher(txt_manufacturingyear.getText());
         if(!match.matches()){ //if pattern does't match display below message and disable save button 
-            labelmanuyear.setText("Something went wrong!!");
+            labelmanuyear.setText("Error!!");
             updateButton.setEnabled(false);
         }
         else{ //if pattern matches do not display any message and enable the save button
@@ -589,7 +589,7 @@ public class ViewPanel extends javax.swing.JPanel {
         Pattern patt=Pattern.compile(PATTERN);
         Matcher match =patt.matcher(txt_seats.getText());
         if(!match.matches()){ //if pattern does't match display below message and disable save button 
-            labelseats.setText("Something went wrong!!");
+            labelseats.setText("Error!!");
             updateButton.setEnabled(false);
         }
         else{ //if pattern matches do not display any message and enable the save button
@@ -604,7 +604,7 @@ public class ViewPanel extends javax.swing.JPanel {
         Pattern patt=Pattern.compile(PATTERN);
         Matcher match =patt.matcher(txt_platenumber.getText());
         if(!match.matches()){ //if pattern does't match display below message and disable save button 
-            labelvehicleplate.setText("Something went wrong!!");
+            labelvehicleplate.setText("Error!!");
             updateButton.setEnabled(false);
         }
         else{ //if pattern matches do not display any message and enable the save button
@@ -619,7 +619,7 @@ public class ViewPanel extends javax.swing.JPanel {
         Pattern patt=Pattern.compile(PATTERN);
         Matcher match =patt.matcher(txt_colour.getText());
         if(!match.matches()){ //if pattern does't match display below message and disable save button 
-            labelcarcolor.setText("Something went wrong!!");
+            labelcarcolor.setText("Error!!");
             updateButton.setEnabled(false);
         }
         else{ //if pattern matches do not display any message and enable the save button
@@ -634,7 +634,7 @@ public class ViewPanel extends javax.swing.JPanel {
         Pattern patt=Pattern.compile(PATTERN);
         Matcher match =patt.matcher(txt_Availability.getText());
         if(!match.matches()){ //if pattern does't match display below message and disable save button 
-            labelavailability.setText("Insert available or inaccessible!");
+            labelavailability.setText("Error!");
             updateButton.setEnabled(false);
         }
         else{ //if pattern matches do not display any message and enable the save button
@@ -649,7 +649,7 @@ public class ViewPanel extends javax.swing.JPanel {
         Pattern patt=Pattern.compile(PATTERN);
         Matcher match =patt.matcher(txt_expiration.getText());
         if(!match.matches()){ //if pattern does't match display below message and disable save button 
-            labelmaintainance.setText("Insert expired or exists!");
+            labelmaintainance.setText("Error!");
             updateButton.setEnabled(false);
         }
         else{ //if pattern matches do not display any message and enable the save button
@@ -664,7 +664,7 @@ public class ViewPanel extends javax.swing.JPanel {
         Pattern patt=Pattern.compile(PATTERN);
         Matcher match =patt.matcher(txt_Location.getText());
         if(!match.matches()){ //if pattern does't match display below message and disable save button 
-            labellocation.setText("Enter only the mentioned city name!");
+            labellocation.setText("Error!");
             updateButton.setEnabled(false);
         }
         else{ //if pattern matches do not display any message and enable the save button
