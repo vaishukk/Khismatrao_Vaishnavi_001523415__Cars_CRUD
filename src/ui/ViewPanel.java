@@ -7,6 +7,8 @@ package ui;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -111,6 +113,15 @@ public class ViewPanel extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         txt_timestamp = new javax.swing.JTextField();
         timeStampButton = new javax.swing.JButton();
+        labelname = new javax.swing.JLabel();
+        labelmanufacturer = new javax.swing.JLabel();
+        labelmanuyear = new javax.swing.JLabel();
+        labelseats = new javax.swing.JLabel();
+        labelvehicleplate = new javax.swing.JLabel();
+        labelcarcolor = new javax.swing.JLabel();
+        labelavailability = new javax.swing.JLabel();
+        labelmaintainance = new javax.swing.JLabel();
+        labellocation = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 51, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -129,10 +140,20 @@ public class ViewPanel extends javax.swing.JPanel {
 
         txt_modelname.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_modelname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_modelname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_modelnameKeyReleased(evt);
+            }
+        });
         add(txt_modelname, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 81, -1));
 
         txt_manufacturer.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_manufacturer.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_manufacturer.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_manufacturerKeyReleased(evt);
+            }
+        });
         add(txt_manufacturer, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 81, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -143,6 +164,11 @@ public class ViewPanel extends javax.swing.JPanel {
 
         txt_seats.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_seats.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_seats.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_seatsKeyReleased(evt);
+            }
+        });
         add(txt_seats, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 81, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -153,6 +179,11 @@ public class ViewPanel extends javax.swing.JPanel {
 
         txt_platenumber.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_platenumber.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_platenumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_platenumberKeyReleased(evt);
+            }
+        });
         add(txt_platenumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, 81, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -163,6 +194,11 @@ public class ViewPanel extends javax.swing.JPanel {
 
         txt_colour.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_colour.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_colour.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_colourKeyReleased(evt);
+            }
+        });
         add(txt_colour, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, 80, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -179,6 +215,11 @@ public class ViewPanel extends javax.swing.JPanel {
 
         txt_expiration.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_expiration.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_expiration.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_expirationKeyReleased(evt);
+            }
+        });
         add(txt_expiration, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 80, -1));
 
         viewtablecars.setModel(new javax.swing.table.DefaultTableModel(
@@ -246,10 +287,20 @@ public class ViewPanel extends javax.swing.JPanel {
 
         txt_Availability.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_Availability.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_Availability.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_AvailabilityKeyReleased(evt);
+            }
+        });
         add(txt_Availability, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 390, 80, -1));
 
         txt_manufacturingyear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_manufacturingyear.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_manufacturingyear.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_manufacturingyearKeyReleased(evt);
+            }
+        });
         add(txt_manufacturingyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, 81, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -291,7 +342,7 @@ public class ViewPanel extends javax.swing.JPanel {
                 viewbuttonActionPerformed(evt);
             }
         });
-        add(viewbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 210, -1, -1));
+        add(viewbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 210, -1, -1));
 
         txt_search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_search.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -309,6 +360,11 @@ public class ViewPanel extends javax.swing.JPanel {
 
         txt_Location.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_Location.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_Location.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_LocationKeyReleased(evt);
+            }
+        });
         add(txt_Location, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, 80, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -342,6 +398,42 @@ public class ViewPanel extends javax.swing.JPanel {
         jPanel2.add(timeStampButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 280, 335, 131));
+
+        labelname.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        labelname.setForeground(new java.awt.Color(255, 255, 51));
+        add(labelname, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, -1, -1));
+
+        labelmanufacturer.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        labelmanufacturer.setForeground(new java.awt.Color(255, 255, 51));
+        add(labelmanufacturer, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 230, -1, -1));
+
+        labelmanuyear.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        labelmanuyear.setForeground(new java.awt.Color(255, 255, 51));
+        add(labelmanuyear, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 260, -1, -1));
+
+        labelseats.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        labelseats.setForeground(new java.awt.Color(255, 255, 51));
+        add(labelseats, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 290, -1, -1));
+
+        labelvehicleplate.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        labelvehicleplate.setForeground(new java.awt.Color(255, 255, 51));
+        add(labelvehicleplate, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, -1, -1));
+
+        labelcarcolor.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        labelcarcolor.setForeground(new java.awt.Color(255, 255, 51));
+        add(labelcarcolor, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 360, -1, -1));
+
+        labelavailability.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        labelavailability.setForeground(new java.awt.Color(255, 255, 51));
+        add(labelavailability, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, -1, -1));
+
+        labelmaintainance.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        labelmaintainance.setForeground(new java.awt.Color(255, 255, 51));
+        add(labelmaintainance, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 420, -1, -1));
+
+        labellocation.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        labellocation.setForeground(new java.awt.Color(255, 255, 51));
+        add(labellocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 450, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbuttonActionPerformed
@@ -446,6 +538,141 @@ public class ViewPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_updateButtonMousePressed
 
+    private void txt_modelnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_modelnameKeyReleased
+        // TODO add your handling code here:
+        String PATTERN="^[a-zA-Z0-9 ]{0,30}$";//pattern for name text field         
+        Pattern patt=Pattern.compile(PATTERN);
+        Matcher match =patt.matcher(txt_modelname.getText());
+        if(!match.matches()){ //if pattern does't match display below message and disable save button 
+            labelname.setText("Error!!");
+            updateButton.setEnabled(false);
+        }
+        else{ //if pattern matches do not display any message and enable the save button
+            labelname.setText(null);
+            updateButton.setEnabled(true);
+        }
+    }//GEN-LAST:event_txt_modelnameKeyReleased
+
+    private void txt_manufacturerKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_manufacturerKeyReleased
+        // TODO add your handling code here:
+        String PATTERN="^[a-zA-Z]{0,30}$";//pattern for name text field         
+        Pattern patt=Pattern.compile(PATTERN);
+        Matcher match =patt.matcher(txt_manufacturer.getText());
+        if(!match.matches()){ //if pattern does't match display below message and disable save button 
+            labelmanufacturer.setText("Something went wrong!!");
+            updateButton.setEnabled(false);
+        }
+        else{ //if pattern matches do not display any message and enable the save button
+            labelmanufacturer.setText(null);
+            updateButton.setEnabled(true);
+        }
+    }//GEN-LAST:event_txt_manufacturerKeyReleased
+
+    private void txt_manufacturingyearKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_manufacturingyearKeyReleased
+        // TODO add your handling code here:
+        String PATTERN="^[0-9]{4}$";//pattern for name text field         
+        Pattern patt=Pattern.compile(PATTERN);
+        Matcher match =patt.matcher(txt_manufacturingyear.getText());
+        if(!match.matches()){ //if pattern does't match display below message and disable save button 
+            labelmanuyear.setText("Something went wrong!!");
+            updateButton.setEnabled(false);
+        }
+        else{ //if pattern matches do not display any message and enable the save button
+            labelmanuyear.setText(null);
+            updateButton.setEnabled(true);
+        }
+    }//GEN-LAST:event_txt_manufacturingyearKeyReleased
+
+    private void txt_seatsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_seatsKeyReleased
+        // TODO add your handling code here:
+        String PATTERN="^[0-9]{0,2}$";//pattern for name text field         
+        Pattern patt=Pattern.compile(PATTERN);
+        Matcher match =patt.matcher(txt_seats.getText());
+        if(!match.matches()){ //if pattern does't match display below message and disable save button 
+            labelseats.setText("Something went wrong!!");
+            updateButton.setEnabled(false);
+        }
+        else{ //if pattern matches do not display any message and enable the save button
+            labelseats.setText(null);
+            updateButton.setEnabled(true);
+        }
+    }//GEN-LAST:event_txt_seatsKeyReleased
+
+    private void txt_platenumberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_platenumberKeyReleased
+        // TODO add your handling code here:
+        String PATTERN="^[a-zA-Z0-9]{0,10}$";//pattern for name text field         
+        Pattern patt=Pattern.compile(PATTERN);
+        Matcher match =patt.matcher(txt_platenumber.getText());
+        if(!match.matches()){ //if pattern does't match display below message and disable save button 
+            labelvehicleplate.setText("Something went wrong!!");
+            updateButton.setEnabled(false);
+        }
+        else{ //if pattern matches do not display any message and enable the save button
+            labelvehicleplate.setText(null);
+            updateButton.setEnabled(true);
+        }
+    }//GEN-LAST:event_txt_platenumberKeyReleased
+
+    private void txt_colourKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_colourKeyReleased
+        // TODO add your handling code here:
+        String PATTERN="^[a-zA-Z]{0,10}$";//pattern for name text field         
+        Pattern patt=Pattern.compile(PATTERN);
+        Matcher match =patt.matcher(txt_colour.getText());
+        if(!match.matches()){ //if pattern does't match display below message and disable save button 
+            labelcarcolor.setText("Something went wrong!!");
+            updateButton.setEnabled(false);
+        }
+        else{ //if pattern matches do not display any message and enable the save button
+            labelcarcolor.setText(null);
+            updateButton.setEnabled(true);
+        }
+    }//GEN-LAST:event_txt_colourKeyReleased
+
+    private void txt_AvailabilityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_AvailabilityKeyReleased
+        // TODO add your handling code here:
+        String PATTERN="^[available|inaccessible]{0,10}$";//pattern for name text field         
+        Pattern patt=Pattern.compile(PATTERN);
+        Matcher match =patt.matcher(txt_Availability.getText());
+        if(!match.matches()){ //if pattern does't match display below message and disable save button 
+            labelavailability.setText("Insert available or inaccessible!");
+            updateButton.setEnabled(false);
+        }
+        else{ //if pattern matches do not display any message and enable the save button
+            labelavailability.setText(null);
+            updateButton.setEnabled(true);
+        }
+    }//GEN-LAST:event_txt_AvailabilityKeyReleased
+
+    private void txt_expirationKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_expirationKeyReleased
+        // TODO add your handling code here:
+        String PATTERN="^[expired|exists]{0,10}$";//pattern for name text field         
+        Pattern patt=Pattern.compile(PATTERN);
+        Matcher match =patt.matcher(txt_expiration.getText());
+        if(!match.matches()){ //if pattern does't match display below message and disable save button 
+            labelmaintainance.setText("Insert expired or exists!");
+            updateButton.setEnabled(false);
+        }
+        else{ //if pattern matches do not display any message and enable the save button
+            labelmaintainance.setText(null);
+            updateButton.setEnabled(true);
+        }
+    }//GEN-LAST:event_txt_expirationKeyReleased
+
+    private void txt_LocationKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_LocationKeyReleased
+        // TODO add your handling code here:
+        String PATTERN="^(boston|Boston|seattle|Seattle|newyork|Newyork|Charlotte|charlotte){0,10}$";//pattern for name text field         
+        Pattern patt=Pattern.compile(PATTERN);
+        Matcher match =patt.matcher(txt_Location.getText());
+        if(!match.matches()){ //if pattern does't match display below message and disable save button 
+            labellocation.setText("Enter only the mentioned city name!");
+            updateButton.setEnabled(false);
+        }
+        else{ //if pattern matches do not display any message and enable the save button
+            labellocation.setText(null);
+            updateButton.setEnabled(true);
+        }
+    }//GEN-LAST:event_txt_LocationKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -464,6 +691,15 @@ public class ViewPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JLabel labelavailability;
+    private javax.swing.JLabel labelcarcolor;
+    private javax.swing.JLabel labellocation;
+    private javax.swing.JLabel labelmaintainance;
+    private javax.swing.JLabel labelmanufacturer;
+    private javax.swing.JLabel labelmanuyear;
+    private javax.swing.JLabel labelname;
+    private javax.swing.JLabel labelseats;
+    private javax.swing.JLabel labelvehicleplate;
     private javax.swing.JTable searchTable;
     private javax.swing.JButton timeStampButton;
     private javax.swing.JTextField txt_Availability;
