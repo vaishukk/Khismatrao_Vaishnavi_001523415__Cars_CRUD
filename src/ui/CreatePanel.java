@@ -378,6 +378,7 @@ public class CreatePanel extends javax.swing.JPanel {
              
              maintenanceExpiration = radioButton_NotExpired.getText();
          }
+        
          for(Cars c : history.getHistory()){
               if(c.getVehicleLicensePlate().contains(vehicleLicensePlate)){
                   JOptionPane.showMessageDialog(this,"Vehicle License Plate already exists. Please enter another vehicle license plate");
@@ -385,8 +386,12 @@ public class CreatePanel extends javax.swing.JPanel {
               }
               else
                   break;
-         }  
-        savemethod();
+         } 
+          if (txt_colour.getText().length()<=0 || txt_manufacturer.getText().length()<=0 || txt_manufacturingyear.getText().length()<=0 || txt_modelname.getText().length()<=0 || txt_platenumber.getText().length()<=0 || txt_seats.getText().length()<=0){
+             JOptionPane.showMessageDialog(this,"Empty field id not allowed!!");
+         }
+          else
+            savemethod();
               
           
           
